@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<VoiceObjectsXML version="14.1">
+    <!-- Project: connectIVR -->
+    <!-- Project Version: Version 1.0 -->
+    <!-- Library: false -->
+    <!-- Exported: April 14, 2016 8:25 -->
+    <projectInfo name="connectIVR" projectSID="0.43.43" version="Version 1.0"/>
+    <module creationDate="1460590140000"
+        guid="OVAPd6633aae69d9fb3a01cf11e6a0cdcdbc9b80cde0"
+        historyTracking="true" hyperlinkPlacement="default"
+        inheritDEP="true" inheritPresentation="true"
+        lastModifier="serverAdmin" menuPresentation="default"
+        modificationDate="1460591410000" name="START"
+        owner="serverAdmin" pageTransitionDirection="default" pageTransitionStyle="default">
+        <output creationDate="1460590140000"
+            guid="OVAPd6633aae7ffc075301cf11e6a0cdcdbc9b80cde0"
+            icon="none" lastModifier="serverAdmin"
+            modificationDate="1460590140000" owner="serverAdmin"
+            pageTransitionDirection="default"
+            pageTransitionStyle="default" usage="welcome">
+            <outputItem bargein="default" channel="default"
+                creationDate="1460590140000"
+                guid="OVAPd6633aae7ffc2e6401cf11e6a0cdcdbc9b80cde0"
+                inputMode="default" language="default"
+                lastModifier="serverAdmin"
+                modificationDate="1460591410000" occurrence="always" owner="serverAdmin">
+                <text creationDate="1460591410000"
+                    guid="OVAPd6633aae7529eb3c01d211e6a0cdcdbc9b80cde0"
+                    lastModifier="serverAdmin"
+                    modificationDate="1460591410000" owner="serverAdmin"
+                    random="disabled" textFileExtension="none"><![CDATA[this going work brah, i tell you. ]]></text>
+                <silence link="#1 Second Pause"/>
+                <text creationDate="1460591410000"
+                    guid="OVAPd6633aae7529eb3d01d211e6a0cdcdbc9b80cde0"
+                    lastModifier="serverAdmin"
+                    modificationDate="1460591410000" owner="serverAdmin"
+                    random="disabled" textFileExtension="none"><![CDATA[ ]]></text>
+            </outputItem>
+        </output>
+        <sequence creationDate="1460590140000"
+            guid="OVAPd6633aae7ffc2e6501cf11e6a0cdcdbc9b80cde0"
+            lastModifier="serverAdmin" modificationDate="1460591410000" owner="serverAdmin">
+            <menu link="#Menu1"/>
+        </sequence>
+    </module>
+    <menu autonumbering="none" creationDate="1460591392000"
+        guid="OVAPd6633aaed9cabf6a01cf11e6a0cdcdbc9b80cde0"
+        inheritPresentation="true" lastModifier="serverAdmin"
+        menuPresentation="default" modificationDate="1460657522000"
+        name="Menu1" owner="serverAdmin" return="true">
+        <output creationDate="1460657522000"
+            guid="OVAPfff8833262d8afa0026c11e685ad3bf641534473"
+            icon="none" lastModifier="serverAdmin"
+            modificationDate="1460657522000" owner="serverAdmin"
+            pageTransitionDirection="default" pageTransitionStyle="default">
+            <outputItem bargein="default" channel="default"
+                creationDate="1460657522000"
+                guid="OVAPfff8833262d8afa1026c11e685ad3bf641534473"
+                inputMode="default" language="default"
+                lastModifier="serverAdmin"
+                modificationDate="1460657522000" occurrence="always" owner="serverAdmin">
+                <text creationDate="1460657522000"
+                    guid="OVAPfff8833262d9e749026c11e685ad3bf641534473"
+                    lastModifier="serverAdmin"
+                    modificationDate="1460657522000" owner="serverAdmin"
+                    random="disabled" textFileExtension="none"><![CDATA[Press 1 if you like call the kine person for talk to]]></text>
+            </outputItem>
+        </output>
+        <menuItem channel="default" creationDate="1460591403000"
+            dtmfKeys="1" exit="false"
+            guid="OVAPd6633aae6a9d91d901d211e6a0cdcdbc9b80cde0"
+            label="1. Redirect Call To Zipwire"
+            lastModifier="serverAdmin" modificationDate="1460657522000"
+            owner="serverAdmin" pageTransitionDirection="default" pageTransitionStyle="default">
+            <transfer link="#Redirect To Zipwire"/>
+        </menuItem>
+    </menu>
+    <silence creationDate="1460590266000" duration="1"
+        guid="OVAPd6633aaec70c035901cf11e6a0cdcdbc9b80cde0"
+        lastModifier="serverAdmin" modificationDate="1460590266000"
+        name="1 Second Pause" owner="serverAdmin"/>
+    <expression creationDate="1460590066000" function="session"
+        guid="OVAPd6633aae5411810d01cf11e6a0cdcdbc9b80cde0"
+        lastModifier="serverAdmin" modificationDate="1460590066000"
+        name="System:ANI" owner="serverAdmin"
+        referenceID="Expression_sessionVariableani" shortDescription="Returns the phone number of the caller through Automatic Number Identification (ANI).">
+        <argument>
+            <value><![CDATA[ani]]></value>
+        </argument>
+    </expression>
+    <expression creationDate="1460590066000" function="channel"
+        guid="OVAPd6633aae5411a81f01cf11e6a0cdcdbc9b80cde0"
+        lastModifier="serverAdmin" modificationDate="1460590066000"
+        name="System:Channel" owner="serverAdmin"
+        referenceID="Expression_channel" shortDescription="Returns the code of the channel (voice, video, text, web) currently used for this service."/>
+    <expression creationDate="1460590066000" function="session"
+        guid="OVAPd6633aae5411a81e01cf11e6a0cdcdbc9b80cde0"
+        lastModifier="serverAdmin" modificationDate="1460590066000"
+        name="System:DNIS" owner="serverAdmin"
+        referenceID="Expression_sessionVariablednis" shortDescription="Returns the phone number of the service through Dialed Number Identification Service (DNIS).">
+        <argument>
+            <value><![CDATA[dnis]]></value>
+        </argument>
+    </expression>
+    <expression creationDate="1460590066000" function="dialogid"
+        guid="OVAPd6633aae5411810601cf11e6a0cdcdbc9b80cde0"
+        lastModifier="serverAdmin" modificationDate="1460590066000"
+        name="System:Dialog ID" owner="serverAdmin"
+        referenceID="Expression_dialogid" shortDescription="Returns the unique ID of the dialog as a string of 44 characters."/>
+    <expression creationDate="1460590066000" function="driver"
+        guid="OVAPd6633aae5411810701cf11e6a0cdcdbc9b80cde0"
+        lastModifier="serverAdmin" modificationDate="1460590066000"
+        name="System:Driver" owner="serverAdmin"
+        referenceID="Expression_driver" shortDescription="Returns a string which represents the media platform driver information of the corresponding service (e.g. Nuance_VWS_2_0_VXML_2_0 or IBM_WVS_2_0_VXML_1_0)."/>
+    <expression creationDate="1460590066000" function="driverasrengine"
+        guid="OVAPd6633aae5411810801cf11e6a0cdcdbc9b80cde0"
+        lastModifier="serverAdmin" modificationDate="1460590066000"
+        name="System:Driver ASR Engine" owner="serverAdmin"
+        referenceID="Expression_speechEngine" shortDescription="Returns a string which represents the name of the ASR engine (e.g. Nuance or Telisma)."/>
+    <expression creationDate="1460590066000" function="exitevent"
+        guid="OVAPd6633aae5411810901cf11e6a0cdcdbc9b80cde0"
+        lastModifier="serverAdmin" modificationDate="1460590066000"
+        name="System:Exit Event" owner="serverAdmin"
+        referenceID="Expression_exitEvent" shortDescription="Returns a string providing the corresponding exit event ending the dialog. Valid return values are: None, Timeout, Exception, EndOfDialog, CallerHangup, CallerExit, Transfer."/>
+    <expression creationDate="1460590066000" function="language"
+        guid="OVAPd6633aae5411810a01cf11e6a0cdcdbc9b80cde0"
+        lastModifier="serverAdmin" modificationDate="1460590066000"
+        name="System:Language" owner="serverAdmin"
+        referenceID="Expression_language" shortDescription="When used without an argument, returns the code of the currently active language (e.g. en-US or de-DE). When used with an argument, it sets the currently active language to this value. Note that the underlying media platform must be configured appropriately to support the language that is being set."/>
+    <expression creationDate="1460590066000" function="modulehistory"
+        guid="OVAPd6633aae5411810b01cf11e6a0cdcdbc9b80cde0"
+        lastModifier="serverAdmin" modificationDate="1460590066000"
+        name="System:Module History" owner="serverAdmin"
+        referenceID="Expression_moduleHistory" shortDescription="Returns a comma-separated list of reference IDs of Module objects processed so far in the current dialog. When used without an argument the entire list will be returned, with the most current Module object at the top of the list. When used with an argument the value of the argument defines how far to go back in the processing history specifying where to start the list (e.g. level=1 means that the list starts with the previous Module object instead of the current one). If the specified level exceeds the size of the processing history an empty string is returned. NOTE: Only Module objects with the option &quot;Enable history tracking&quot; set to true are considered."/>
+    <expression creationDate="1460590066000" function="modulerefid"
+        guid="OVAPd6633aae5411810c01cf11e6a0cdcdbc9b80cde0"
+        lastModifier="serverAdmin" modificationDate="1460590066000"
+        name="System:Module Reference ID" owner="serverAdmin"
+        referenceID="Expression_moduleName" shortDescription="Returns the reference ID of a Module object processed in the current dialog. When used without an argument the reference ID of the currently processed Module object is returned. When used with an argument ([level]) the reference ID of a parent object of the currently processed Module object is returned. The value of the argument specifies how far to go up in the tree of processed modules (e.g. level=1 means that the reference ID of the parent of the currently processed Module object is returned). If the specified level exceeds the depth of the module tree an empty string is returned."/>
+    <transfer connectTimeout="15" creationDate="1460591016000"
+        destination="4123464404"
+        guid="OVAPd6633aae0d8f4ffd01d011e6a0cdcdbc9b80cde0"
+        lastModifier="serverAdmin" maxDuration="0" mode="bridge"
+        modificationDate="1460657916000" name="Redirect To Zipwire"
+        owner="serverAdmin" protocol="sip" standbyTimeout="120">
+        <output creationDate="1460591016000"
+            guid="OVAPd6633aae8aa1c90301d111e6a0cdcdbc9b80cde0"
+            icon="none" modificationDate="1460591016000"
+            owner="serverAdmin" pageTransitionDirection="default" pageTransitionStyle="default">
+            <outputItem bargein="default" channel="default"
+                creationDate="1460591142000"
+                guid="OVAPd6633aae8aa1f01401d111e6a0cdcdbc9b80cde0"
+                inputMode="default" language="default"
+                lastModifier="serverAdmin"
+                modificationDate="1460657916000" occurrence="always" owner="serverAdmin">
+                <text creationDate="1460591173000"
+                    guid="OVAPd6633aaee82dd85201d111e6a0cdcdbc9b80cde0"
+                    lastModifier="serverAdmin"
+                    modificationDate="1460591173000" owner="serverAdmin"
+                    random="disabled" textFileExtension="none"><![CDATA[kay, try wait I going redirect the call. ]]></text>
+                <silence link="#1 Second Pause"/>
+                <text creationDate="1460591173000"
+                    guid="OVAPd6633aaee82dd85301d111e6a0cdcdbc9b80cde0"
+                    lastModifier="serverAdmin"
+                    modificationDate="1460591173000" owner="serverAdmin"
+                    random="disabled" textFileExtension="none"><![CDATA[ ]]></text>
+            </outputItem>
+        </output>
+    </transfer>
+</VoiceObjectsXML>
